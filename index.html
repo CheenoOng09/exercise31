@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script>
+      function validateForm() {
+        let x = document.forms["myform"]["digit"].value;
+        if( x > 300 ){
+          document.getElementById("demo").innerHTML = "Value too large";
+          return false;
+        }
+        else if( x < 150 ) {
+          document.getElementById("demo").innerHTML = "Value too small";
+          return false;
+        }
+        else{
+          document.getElementById("demo").innerHTML = "Input OK";
+        }
+      }  
+    </script>
+  </head>
+  <body>
+    <h2>Please Input a number between 150 and 300</h2>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      <input type="number" name="digit">
+      <input type="submit" value="Submit">
+    </form>
+
+    <p id="demo"></p>
+  </body>
+</html>
